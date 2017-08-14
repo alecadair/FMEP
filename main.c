@@ -24,7 +24,7 @@
 #define RESET_COUNT_FLAG 0x04
 #define AUTO_ZERO_FLAG 0x08
 #define SYS_INIT_FLAG 0x10
-#define BOUNCE_FLAG 0x20
+#define BOUNCE_FLAG 0x40
 
 #define FIRMWARE_FLAG 0x20
 #define FIRMWARE_VERSION_TIME 5 //time in seconds for button hold to show firmware version
@@ -36,7 +36,7 @@
 #define SCREEN_LOW_BAT 0x40 //for lcd6flags
 //#define INTERRUPT_FLAG 0x20
 
-#define RESET_COUNT_TIME 8 // this number divided by 8 is the amount of seconds to wait on discharge
+#define RESET_COUNT_TIME 4 // this number divided by 8 is the amount of seconds to wait on discharge
 
 // Value Registers
 static volatile long displayVal = 0;
@@ -262,32 +262,58 @@ __interrupt void BT_ISR(void){
 	if(flags & AUTO_ZERO_FLAG){
 		if(zero_timer_count >= RESET_COUNT_TIME){
 			//if enough has passed for circuit to discharge calculate offset and turn circuit back on
-			zero_timer_count = 0;
-			P1IE |= BIT3;//turn on re-zero interrupt
+			if(!(flags & BOUNCE_FLAG)){
+				//zero_timer_count ++;
+				//P1IE |= BIT3;//turn on re-zero interrupt
 
 
-			while((SD16CCTL0 & SD16IFG) == 0);
-			/*long*/ temp = SD16MEM0;
-			//offset_amount = temp;
-			//measurement = (65535 - temp) - 32768;
-			measurement = temp - 32768;
-			measurement *= compressionRatio;
-			//measurement *= .109; //compensating for resistor value.
-			measurement *= .1;
-			offset_amount = measurement;
-			displayVal = 0;
-			//if(displayVal < 0)
-			//    displayVal = 0;
-			measurement = 0;
-			flags &= ~AUTO_ZERO_FLAG;
-			flags |= UPDATE_SCREEN_FLAG;
-			P1OUT &= ~BIT4;// open analog reset switch
+				while((SD16CCTL0 & SD16IFG) == 0);
+				/*long*/ temp = SD16MEM0;
+				//offset_amount = temp;
+				//measurement = (65535 - temp) - 32768;
+				measurement = temp - 32768;
+				measurement *= compressionRatio;
+				//measurement *= .109; //compensating for resistor value.
+				//measurement *= .1;
+				offset_amount = measurement;
+				displayVal = 0;
+				//if(displayVal < 0)
+				//    displayVal = 0;
+				measurement = 0;
+				//flags &= ~AUTO_ZERO_FLAG;
+				//flags |= UPDATE_SCREEN_FLAG;
+				P1OUT &= ~BIT4;// open analog reset switch
+				flags |= BOUNCE_FLAG;
 
-
-			//__delay_cycles(500000);
-			P1IE |= BIT3; // re-enable auto-zero interrupt
+				//__delay_cycles(500000);
+				//P1IE |= BIT3; // re-enable auto-zero interrupt
 			//offset_amount = take_measurement();
 			//flags |= UPDATE_SCREEN_FLAG;
+			}else{
+				if(bounce_count >= 4){
+					zero_timer_count = 0;
+					bounce_count = 0;
+					while((SD16CCTL0 & SD16IFG) == 0);
+					/*long*/ temp = SD16MEM0;
+					//offset_amount = temp;
+					//measurement = (65535 - temp) - 32768;
+					measurement = temp - 32768;
+					measurement *= compressionRatio;
+					//measurement *= .109; //compensating for resistor value.
+					//measurement *= .1;
+					offset_amount = measurement;
+					displayVal = 0;
+					//if(displayVal < 0)
+					//    displayVal = 0;
+					measurement = 0;
+					flags &= ~AUTO_ZERO_FLAG;
+					flags &= ~BOUNCE_FLAG;
+					P1IE |= BIT3; // re-enable auto-zero interrupt
+					flags |= UPDATE_SCREEN_FLAG;
+				}else{
+					bounce_count ++;
+				}
+			}
 		}else{
 			zero_timer_count ++;
 		}
