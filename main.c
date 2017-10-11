@@ -251,11 +251,11 @@ __interrupt void BT_ISR(void){
 				if(bounce_count >= 4){
 					zero_timer_count = 0;
 					bounce_count = 0;
-					while((SD16CCTL0 & SD16IFG) == 0);
-					temp = SD16MEM0;
-					measurement = temp - 32768;
-					measurement *= compressionRatio;
-					offset_amount = measurement;
+					//while((SD16CCTL0 & SD16IFG) == 0);
+					//temp = SD16MEM0;
+					//measurement = temp - 32768;
+					//measurement *= compressionRatio;
+					//offset_amount = measurement;
 					display_value = 0;
 					measurement = 0;
 					flag.reset_mode = 0;
