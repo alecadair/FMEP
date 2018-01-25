@@ -1,0 +1,158 @@
+(ExpressProject "PEMF"
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (NoModify)
+    (File ".\pemf.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (Netlist_TAB "3")
+    (LAYOUT_Netlist_File "PEMF.MNL")
+    (LAYOUT_PCB_Footprint "{PCB Footprint}")
+    (FALSE)
+    (LAYOUT_Units "0")
+    (FALSE)
+    (FALSE)
+    (FALSE)
+    (BOM_Scope "0")
+    (BOM_Mode "0")
+    (BOM_Report_File
+       "C:\USERS\ANDREW\DESKTOP\ALPHALAB\PROJECTS\PROTOTYPE STAGE\PEMF METER\PEMF.BOM")
+    (BOM_Merge_Include "FALSE")
+    (BOM_Property_Combine_7.0 "{Item}\t{Quantity}\t{Reference}\t{Value}")
+    (BOM_Header "Item\tQuantity\tReference\tPart")
+    (BOM_Include_File
+       "C:\USERS\ANDREW\DESKTOP\ALPHALAB\PROJECTS\PROTOTYPE STAGE\PEMF METER\PEMF.INC")
+    (BOM_Include_File_Combine_7.0 "{Item}\t{Quantity}\t{Reference}\t{Value}")
+    (BOM_One_Part_Per_Line "FALSE")
+    (Open_BOM_in_Excel "FALSE")
+    (BOM_View_Output "FALSE")
+    (FALSE)
+    (FALSE)
+    (FALSE))
+  (Folder "Outputs"
+    (File ".\pemf.mnl"
+      (Type "LAYOUT Netlist File"))
+    (File ".\pemf.bom"
+      (Type "Report")))
+  (Folder "Referenced Projects")
+  (PartMRUSelector
+    ("Pot SMT"
+      (FullPartName "Pot SMT.Normal")
+      (LibraryName "C:\USERS\ALEC\DESKTOP\LIBRARY\CAPTURE\PASSIVE.OLB")
+      (DeviceIndex "0"))
+    ("Resistor 0805"
+      (FullPartName "Resistor 0805.Normal")
+      (LibraryName "C:\USERS\ALEC\DESKTOP\LIBRARY\CAPTURE\PASSIVE.OLB")
+      (DeviceIndex "0"))
+    ("OpAmp Dual"
+      (FullPartName "OpAmp Dual.Normal")
+      (LibraryName "C:\USERS\ALEC\DESKTOP\LIBRARY\CAPTURE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    ("PNP SOT23"
+      (FullPartName "PNP SOT23.Normal")
+      (LibraryName "C:\USERS\ALEC\DESKTOP\LIBRARY\CAPTURE\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (TLC272
+      (FullPartName "TLC272.Normal")
+      (LibraryName "C:\ORCAD\ORCAD_10.5\TOOLS\CAPTURE\LIBRARY\OPAMP.OLB")
+      (DeviceIndex "0"))
+    (TPS76050
+      (FullPartName "TPS76050.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\VREG.OLB")
+      (DeviceIndex "0"))
+    ("Capacitor 0805"
+      (FullPartName "Capacitor 0805.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\PASSIVE.OLB")
+      (DeviceIndex "0"))
+    (MH150
+      (FullPartName "MH150.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\ELECTROMECH.OLB")
+      (DeviceIndex "0"))
+    ("Pad SMT"
+      (FullPartName "Pad SMT.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\PASSIVE.OLB")
+      (DeviceIndex "0"))
+    ("Resistor 4xNet"
+      (FullPartName "Resistor 4xNet.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\PASSIVE.OLB")
+      (DeviceIndex "0"))
+    ("Diode SOD123"
+      (FullPartName "Diode SOD123.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (Battery
+      (FullPartName "Battery.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\ELECTROMECH.OLB")
+      (DeviceIndex "0"))
+    (CD4053
+      (FullPartName "CD4053.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\LOGIC.OLB")
+      (DeviceIndex "0"))
+    ("Capacitor 5mmPol"
+      (FullPartName "Capacitor 5mmPol.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\PASSIVE.OLB")
+      (DeviceIndex "0"))
+    (S812Reg
+      (FullPartName "S812Reg.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\VREG.OLB")
+      (DeviceIndex "0"))
+    ("XC62K Negative Reg"
+      (FullPartName "XC62K Negative Reg.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\VREG.OLB")
+      (DeviceIndex "0"))
+    (LK112
+      (FullPartName "LK112.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\VREG.OLB")
+      (DeviceIndex "0"))
+    ("OpAmp Quad"
+      (FullPartName "OpAmp Quad.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (2PinPolarized
+      (FullPartName "2PinPolarized.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\HEADERS.OLB")
+      (DeviceIndex "0"))
+    ("GND_FIELD SIGNAL"
+      (LibraryName "C:\ORCAD\ORCAD_10.5\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (3PinPolarized
+      (FullPartName "3PinPolarized.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\HEADERS.OLB")
+      (DeviceIndex "0"))
+    ("Crystal HC49"
+      (FullPartName "Crystal HC49.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (MSP430F42x0
+      (FullPartName "MSP430F42x0.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\MICROCPU.OLB")
+      (DeviceIndex "0"))
+    ("Rotary 2Pol4Pos LP"
+      (FullPartName "Rotary 2Pol4Pos LP.Normal")
+      (LibraryName "C:\USERS\ANDREW\DESKTOP\LIBRARY\CAPTURE\SWITCHES.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Select "Design Resources"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 1 447 -9 922"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -30 293 2069 -21 909")
+        (Scroll "0 0")
+        (Zoom "93")
+        (Occurrence "/"))
+      (Path "C:\USERS\ALEC\DESKTOP\PEMF METER\PEMF.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "Analog")))
+  (MPSSessionName "AAdair")
+  (LastUsedLibraryBrowseDirectory "C:\OrCAD\OrCAD_10.5\tools\capture\library"))
